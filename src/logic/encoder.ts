@@ -36,5 +36,6 @@ export default function encoder(input:string) {
     out =groupBy11bits(out);
     out =out?.map((elem:string)=>parseInt(elem, 2))
     out =out?.map((elem:number)=>charTable[elem])
+    out =out?.join("")
     return out
 }
