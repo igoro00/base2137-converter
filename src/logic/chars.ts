@@ -1,4 +1,4 @@
-export default ['q',
+const chars= ['q',
 'w',
 'e',
 'r',
@@ -2135,3 +2135,4 @@ export default ['q',
 '👩🏿‍❤️‍👩🏽',
 '👩🏿‍❤️‍👩🏾',
 '👩🏿‍❤️‍👩🏿',]
+export default chars;
