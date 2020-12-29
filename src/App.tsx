@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <input type="text" onChange={(event)=>setInputValue(event.target.value)} /><br/><br/>
-      <h3>{JSON.stringify(encoder(inputValue))}</h3>
+      <h3>{encoder(inputValue)}</h3>
     </div>
   );
 }
