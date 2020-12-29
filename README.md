@@ -1,6 +1,6 @@
 # Base 2137 Converter
 
-React web-app that converts to and from my custom base2137 format. You can preview the site [here](https://blissful-hugle-1420b7.netlify.app/).
+React web-app that converts to and from my custom base2137 format. You can preview the site [here](https://base2137.netlify.app/).
 
 ## Available Scripts
 
