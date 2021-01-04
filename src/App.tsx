@@ -4,13 +4,32 @@ import decoder from './logic/decoder';
 import encoder from './logic/encoder';
 
 function App() {
-  const [inputValue, setInputValue] = useState<string>("")
+  const [plain, setPlain] = useState<string>("")
+  const [encoded, setEncoded] = useState<string>("")
   
   return (
     <div className="App">
-      <input type="text" onChange={(event)=>setInputValue(event.target.value)} /><br/><br/>
-      <h3>{encoder(inputValue)}</h3>
-      <h3>{decoder(encoder(inputValue))}</h3>
+      <h1>Base 2137</h1>
+      <p>Plain text:</p>
+      <textarea 
+        className="textarea"
+        value={plain} 
+        onChange={(event)=>{
+          setPlain(event.target.value);
+          setEncoded(encoder(event.target.value));
+        }}
+        rows={5}
+      />
+      <br/><br/>
+      <p>Base2137-encoded text:</p>
+      <textarea 
+        className="textarea"
+        value={encoded} 
+        onChange={(event)=>{
+          setEncoded(event.target.value);
+          setPlain(decoder(event.target.value));
+        }}
+        rows={5}/>
     </div>
   );
 }
