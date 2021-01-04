@@ -29,13 +29,17 @@ const groupBy11bits=(input:string)=>input.match(/.{1,11}/g)
 // parsed to real numbers [779,136,64,514,16,128,1028,32]
 // picked from the list by index ["🧔🏽‍♀️","‰","@","🏊","j","õ","👨🏼‍⚕️","U"]
 export default function encoder(input:string) {
+    let parity:number;
     let out:any = new Uint32Array(Buffer.from(input, "utf8"));
     out =allignTo11(out);
     out =arrToBinaryString(out);
     out =out.join("")
     out =groupBy11bits(out);
     out =out?.map((elem:string)=>parseInt(elem, 2))
+    parity = out?.reduce((a:number,b:number)=>a+b)%89
     out =out?.map((elem:number)=>charTable[elem])
     out =out?.join("")
-    return out
+    out =out+charTable[2047+parity]
+    
+    return out || ""
 }
